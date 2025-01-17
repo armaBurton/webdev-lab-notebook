@@ -1,38 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Exercise 02 - Images</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>Exercise 02 - Images</title>
-</head>
-
-<body>
-  <main>
-    <!-- Add your code here -->
-    <figure>
-      <img src="https://picsum.photos/200/150?random=1" alt="random image" />
-      <figcaption>Random Image from picsum.photos</figcaption>
-    </figure>
-    <figure>
-      <img src="https://picsum.photos/200/150?random=2" alt="random image" />
-      <figcaption>Random Image from picsum.photos</figcaption>
-    </figure>
-  </main>
-</body>
-
+  <body>
+    <main>
+      <!-- Add your code here -->
+      <figure>
+        <img id="pic1"" />
+        <figcaption id="fig1"></figcaption>
+      </figure>
+      <figure>
+        <img id="pic2" />
+        <figcaption id="fig2"></figcaption>
+      </figure>
+    </main>
+  </body>
 </html>
 
 <script>
-  async function test() {
-    const pic1 = await fetch('https://picsum.photos/200/150?random=1/')
-      .then((response) => {
-        return response.blob()
-      }).then(blob => { return URL.createObjectURL(blob) });
+  const fetchImage = async () => {
+    const data = await fetch("https://picsum.photos/v2/list?limit=100").then(
+      (response) => {
+        if (!response.ok) {
+          throw new error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.json();
+      }
+    );
+    const pic1 = getRandoPicto(data);
+    const pic2 = getRandoPicto(data);
+    const p1 = document.getElementById("pic1");
+    const p2 = document.getElementById("pic2");
+    const f1 = document.getElementById("fig1");
+    const f2 = document.getElementById("fig2");
+    console.log(pic1);
+    await loadImage(pic1, f1, p1);
+    await loadImage(pic2, f2, p2);
+  };
 
-    alert(this.toDataURL()
-  }
+  const getRandoPicto = (data) => {
+    return data[randoNumbo()];
+  };
 
-  test();
+  const randoNumbo = () => {
+    return Math.floor(Math.random() * 100);
+  };
+
+  const loadImage = async (pic, f, p) => {
+    p.style.width = "200px";
+    p.style.heigh = "150px";
+    f.innerHTML = `Image taken by ${await pic.author}`;
+    p.src = pic.download_url;
+    p.alt = pic.author;
+  };
+
+  fetchImage();
 </script>

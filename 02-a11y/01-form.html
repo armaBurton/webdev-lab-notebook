@@ -1,28 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>01 - Form</title>
-    <link rel="stylesheet" href="../_styles/styles.css" />
-  </head>
-  <body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>01 - Form</title>
+  <link rel="stylesheet" href="../_styles/styles.css" />
+</head>
+
+<body>
+  <header>
     <h1>01 - Form</h1>
+  </header>
+  <main>
     <form action="/submit">
-      <span>Name</span>
-      <input type="text" />
+      <label id="name">Name
+        <input type="text" aria-labelledby="name" />
+      </label>
       <br /><br />
-      <label>
+      <label id="email">
         Email
-        <input type="text" />
+        <input type="text" aria-labelledby="email" />
       </label>
       <br /><br />
       <span>Favorite Character</span>
-      <div><input type="radio" id="spongebob" />Spongebob</div>
-      <div><input type="radio" id="patrick" />Patrick</div>
-      <div><input type="radio" id="sandy" />Sandy</div>
+      <div>
+        <label id="spongebobLabel"> <input aria-checked="false" aria-labelledby="spongebobLabel" type="radio"
+            id="spongebob" />
+          Spongebob
+        </label>
+      </div>
+      <div>
+        <label id="patrickLabel">
+          <input aria-checked="false" aria-labelledby="patrickLabel" type="radio" id="patrick" />
+          Patrick
+        </label>
+      </div>
+      <div>
+        <label id="sandyLabel">
+          <input aria-checked="false" aria-labelledby="sandyLabel" type="radio" id="sandy" />
+          Sandy
+        </label>
+      </div>
       <br />
-      <button>Submit</button>
+      <button type="submit">Submit</button>
     </form>
-  </body>
+  </main>
+</body>
+
 </html>

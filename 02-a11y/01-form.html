@@ -1,28 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>01 - Form</title>
-    <link rel="stylesheet" href="../_styles/styles.css" />
-  </head>
-  <body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>01 - Form</title>
+  <link rel="stylesheet" href="../_styles/styles.css" />
+</head>
+
+<body>
+  <header>
     <h1>01 - Form</h1>
+  </header>
+  <main>
     <form action="/submit">
-      <span>Name</span>
-      <input type="text" />
-      <br /><br />
-      <label>
-        Email
-        <input type="text" />
+      <label id="name">Name
+        <input type="text" aria-labelledby="name" />
       </label>
       <br /><br />
-      <span>Favorite Character</span>
-      <div><input type="radio" id="spongebob" />Spongebob</div>
-      <div><input type="radio" id="patrick" />Patrick</div>
-      <div><input type="radio" id="sandy" />Sandy</div>
+      <label id="email">
+        Email
+        <input type="text" aria-labelledby="email" />
+      </label>
+      <br /><br />
+      <fieldset style="width: 500px">
+        <legend>Favorite Character</legend>
+        <div>
+          <label id="spongebobLabel">
+            <input name="pineapple" aria-checked="true" aria-labelledby="spongebobLabel" type="radio" id="spongebob" />
+            Spongebob
+          </label>
+        </div>
+        <div>
+          <label id="patrickLabel">
+            <input name="pineapple" aria-checked="true" aria-labelledby="patrickLabel" type="radio" id="patrick" />
+            Patrick
+          </label>
+        </div>
+        <div>
+          <label id="sandyLabel">
+            <input name="pineapple" aria-checked="true" aria-labelledby="sandyLabel" type="radio" id="sandy" />
+            Sandy
+          </label>
+        </div>
+      </fieldset>
       <br />
-      <button>Submit</button>
+      <button type="submit">Submit</button>
     </form>
-  </body>
+  </main>
+</body>
+
 </html>

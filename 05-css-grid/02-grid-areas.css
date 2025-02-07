@@ -1,24 +1,160 @@
-.header {
-  grid-area: header;
-}
-
-.article {
-  grid-area: article;
-}
-
-.grid-container {
+.grid-container-1 {
   display: grid;
   height: 97vh;
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(8, 1fr);
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(7, 1fr);
   gap: 10px;
   grid-template-areas:
-    'header'
-    'article'
-    'article'
-    'section'
-    'section'
-    'section'
-    'aside'
-    'footer';
+    "header"
+    "article"
+    "article"
+    "section"
+    "section"
+    "section"
+    "aside"
+    "footer";
+}
+
+.grid-container-1 .header {
+  grid-area: header;
+  grid-column-start: 1;
+  grid-column-end: span 10;
+}
+
+.grid-container-1 .article {
+  grid-area: article;
+  grid-column-start: 3;
+  grid-column-end: span 8;
+  grid-row-start: 2;
+  grid-row-end: span 3;
+}
+
+.grid-container-1 .aside {
+  grid-area: aside;
+  grid-column-start: 1;
+  grid-column-end: span 2;
+  grid-row-start: 2;
+  grid-row-end: span 3;
+}
+
+.grid-container-1 .section {
+  grid-area: section;
+  grid-column-start: 1;
+  grid-column-end: span 10;
+  grid-row-start: 5;
+  grid-row-end: span 2;
+}
+
+.grid-container-1 .footer {
+  grid-area: footer;
+  grid-column-start: 1;
+  grid-column-end: span 10;
+  grid-row: 7;
+}
+
+.grid-container-2 {
+  display: grid;
+  height: 97vh;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(7, 1fr);
+  gap: 10px;
+  grid-template-areas:
+    "header"
+    "article"
+    "article"
+    "section"
+    "section"
+    "section"
+    "aside"
+    "footer";
+}
+
+.grid-container-2 .header {
+  grid-area: header;
+  grid-column-start: 1;
+  grid-column-end: span 5;
+}
+
+.grid-container-2 .article {
+  grid-area: article;
+  grid-column-start: 1;
+  grid-column-end: span 4;
+  grid-row-start: 2;
+  grid-row-end: span 3;
+}
+
+.grid-container-2 .aside {
+  grid-area: aside;
+  grid-column-start: 5;
+  grid-column-end: span 1;
+  grid-row-start: 2;
+  grid-row-end: span 3;
+}
+
+.grid-container-2 .section {
+  grid-area: section;
+  grid-column-start: 1;
+  grid-column-end: span 5;
+  grid-row-start: 5;
+  grid-row-end: span 2;
+}
+
+.grid-container-2 .footer {
+  grid-area: footer;
+  grid-column-start: 1;
+  grid-column-end: span 5;
+  grid-row: 7;
+}
+
+.grid-container-3 {
+  display: grid;
+  height: 97vh;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(9, 1fr);
+  gap: 10px;
+  grid-template-areas:
+    "header"
+    "article"
+    "article"
+    "section"
+    "section"
+    "section"
+    "aside"
+    "footer";
+}
+
+.grid-container-3 .header {
+  grid-area: header;
+  grid-column-start: 2;
+  grid-column-end: span 1;
+}
+
+.grid-container-3 .article {
+  grid-area: article;
+  grid-column-start: 2;
+  grid-column-end: span 1;
+  grid-row-start: 2;
+  grid-row-end: span 3;
+}
+
+.grid-container-3 .aside {
+  grid-area: aside;
+  grid-column-start: 2;
+  grid-column-end: span 1;
+  grid-row-start: 8;
+  grid-row-end: span 1;
+}
+
+.grid-container-3 .section {
+  grid-area: section;
+  grid-column-start: 2;
+  grid-column-end: span 1;
+  grid-row-start: 5;
+  grid-row-end: span 3;
+}
+
+.grid-container-3 .footer {
+  grid-area: footer;
+  grid-column-start: 2;
+  grid-row: 9;
 }

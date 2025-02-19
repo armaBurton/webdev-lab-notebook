@@ -13,7 +13,7 @@ form {
   width: 600px;
 }
 
-form > * {
+form>* {
   margin: 1rem;
 }
 
@@ -21,7 +21,7 @@ form > * {
   font-size: 2px;
 }
 
-.row > * {
+.row>* {
   height: 160px;
   border: 1px solid var(--white);
   background-color: var(--purple);
@@ -36,3 +36,9 @@ form > * {
 .bg-dark {
   background-image: var(--bs-gradient);
 }
+
+.grid div {
+  background-color: var(--purple);
+}
+
+@media section {}

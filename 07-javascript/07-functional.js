@@ -33,23 +33,17 @@ const mapNameFamily = (characters) => {
 
 const filterFamily = (characters, house) => {
   // Return an array with only the characters from a given house
-  const houseArr = []
-
-  characters.map((c) => {
-    c.house === house ? houseArr.push(c) : () => { }
-  })
-
+  const houseArr = characters.filter(characters, house)
 
   return houseArr;
 };
 
 const reduceHouses = (characters) => {
   // Return an object with the number of characters from each house
-  const reduced = {}
-  characters.map(({ house }) => {
-    reduced.hasOwnProperty(house) ? reduced[house]++ : reduced[house] = 1
-    // console.log(name)
+  const reduced = characters.reduce((houses, cur) => {
+    houses.hasOwnProperty(cur.house) ? houses[cur.house]++ : houses[cur.house] = 1
   })
+
 
   return reduced;
 };
